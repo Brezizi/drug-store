@@ -1,0 +1,28 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "basic_rest_api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/index.ts",
+    "build": "tsc",
+    "start": "node ./dist/index.js"
+  },
+  "author": "Brezizi.id",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.20.0",
+    "joi": "^17.13.3",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "@prisma/client": "^5.19.1",
+    "@types/express": "^4.17.21",
+    "@types/joi": "^17.2.2",
+    "dotenv": "^16.4.5",
+    "prisma": "^5.19.1"
+  }
+}
