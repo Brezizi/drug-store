@@ -35,4 +35,20 @@ const updateAdminValidation = (req: Request, res: Response, next: NextFunction) 
     return next()
 }
 
-export {createAdminValidation, updateAdminValidation}
+const authSchema = Joi.object({
+    email: Joi.string().email().required(),
+    pass: Joi.string().required(),
+})
+
+const authValidation = (req: Request, res: Response, next: NextFunction) => {
+    const validation = authSchema.validate(req.body)
+
+    if (validation.error) {
+        return res.status(400).json({
+            message: validation.error.details.map(item => item.message).join()
+        })
+    }
+    return next()
+}
+
+export {createAdminValidation, updateAdminValidation, authValidation }
